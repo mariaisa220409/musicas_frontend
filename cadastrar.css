@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background:
+        radial-gradient(circle at 10% 90%, #7b3fe4 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, #8b5cf6 0%, transparent 40%),
+        linear-gradient(160deg, #2a0f6b 0%, #4a1fb8 50%, #2b0f66 100%);
+    background-attachment: fixed;
+}
+
+body {
+    position: relative;
+    max-width: 560px;
+    margin: 40px auto;
+    padding: 32px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    background: rgba(70, 40, 150, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(10, 0, 50, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #a78bfa, #6d3fe4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(109, 63, 228, 0.5);
+}
+
+/* Disco de vinil */
+.vinil {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(255, 255, 255, 0.1),
+            transparent 20%,
+            rgba(255, 255, 255, 0.14) 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.1) 80%,
+            transparent 100%
+        ),
+        repeating-radial-gradient(circle, #0d0d12 0, #0d0d12 2px, #1d1d26 3px, #0d0d12 4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+    animation: girar 6s linear infinite;
+}
+
+.vinil::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff3b5c, #a78bfa);
+}
+
+.vinil::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    border-radius: 50%;
+    background: #1a0b4d;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+a {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #cdbdff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #cdbdff;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #ffffff;
+    background: rgba(40, 20, 100, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.3);
+}
+
+button {
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    background: #2f7bff;
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(47, 123, 255, 0.45);
+}
+
+button:hover {
+    background: #5593ff;
+}

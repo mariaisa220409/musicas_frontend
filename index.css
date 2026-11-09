@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background:
+        radial-gradient(circle at 10% 90%, #7b3fe4 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, #8b5cf6 0%, transparent 40%),
+        linear-gradient(160deg, #2a0f6b 0%, #4a1fb8 50%, #2b0f66 100%);
+    background-attachment: fixed;
+}
+
+body {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 32px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    background: rgba(70, 40, 150, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(10, 0, 50, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #a78bfa, #6d3fe4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(109, 63, 228, 0.5);
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+header a {
+    padding: 10px 22px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    background: #2f7bff;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(47, 123, 255, 0.45);
+}
+
+header a:hover {
+    background: #5593ff;
+}
+
+#listaMusicas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.musica {
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    padding: 32px;
+    background: linear-gradient(135deg, rgba(30, 15, 90, 0.95), rgba(110, 60, 210, 0.6));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+}
+
+.musica::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 280px;
+    height: 280px;
+    background:
+        radial-gradient(circle at 40% 40%, rgba(255, 70, 160, 0.7), transparent 55%),
+        radial-gradient(circle at 70% 60%, rgba(60, 140, 255, 0.6), transparent 55%),
+        radial-gradient(circle at 50% 80%, rgba(255, 190, 60, 0.5), transparent 50%);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+/* Disco de vinil */
+.vinil {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 40px;
+    width: 220px;
+    height: 220px;
+    margin-top: -110px;
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(255, 255, 255, 0.1),
+            transparent 20%,
+            rgba(255, 255, 255, 0.14) 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.1) 80%,
+            transparent 100%
+        ),
+        repeating-radial-gradient(circle, #0d0d12 0, #0d0d12 2px, #1d1d26 3px, #0d0d12 4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+    animation: girar 6s linear infinite;
+}
+
+.vinil::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 76px;
+    height: 76px;
+    margin: -38px 0 0 -38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff3b5c, #a78bfa);
+}
+
+.vinil::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 50%;
+    background: #1a0b4d;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.musica h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 8px;
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+.artista {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 6px;
+    font-size: 16px;
+    color: #cdbdff;
+}
+
+.detalhes {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 22px;
+    font-size: 14px;
+    color: #a994e8;
+}
+
+.acoes {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 12px;
+}
+
+.editar,
+.apagar {
+    padding: 10px 24px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 999px;
+}
+
+.editar {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.editar:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.apagar {
+    background: #ff3b5c;
+    border: none;
+    box-shadow: 0 8px 20px rgba(255, 59, 92, 0.4);
+}
+
+.apagar:hover {
+    background: #ff5571;
+}
+
+@media (max-width: 640px) {
+    .vinil {
+        width: 130px;
+        height: 130px;
+        right: 16px;
+        margin-top: -65px;
+    }
+
+    .vinil::before {
+        width: 44px;
+        height: 44px;
+        margin: -22px 0 0 -22px;
+    }
+
+    .musica h2 {
+        font-size: 30px;
+    }
+}
